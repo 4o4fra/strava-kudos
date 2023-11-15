@@ -20,7 +20,7 @@ class KudosGiver:
 
         self.max_run_duration = max_run_duration
         self.start_time = time.time()
-        self.num_entries = 200
+        self.num_entries = 100
         self.web_feed_entry_pattern = '[data-testid=web-feed-entry]'
 
         p = sync_playwright().start()
@@ -189,6 +189,7 @@ def main():
     kg.email_login()
     kg.give_kudos()
     kg.give_kudos_to_club(14342)
+    kg.give_kudos_to_club(127495)
     kg.browser.close()
 
 
