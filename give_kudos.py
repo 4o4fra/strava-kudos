@@ -166,12 +166,30 @@ class KudosGiver:
         web_feed_entry_locator = self.page.locator(self.web_feed_entry_pattern)
         self.locate_kudos_buttons_and_maybe_give_kudos(web_feed_entry_locator=web_feed_entry_locator)
         self.browser.close()
+    
+    def give_kudos_to_club(self, club_id):
+        """
+        Navigate to club page and give kudos to all activities
+        """
+        self.page.goto(os.path.join(BASE_URL, f"dashboard?club_id={club_id}&feed_type=club"))
+
+        ## Scrolling for lazy loading elements.
+        for _ in range(5):
+            self.page.keyboard.press('PageDown')
+            time.sleep(0.5)
+            self.page.keyboard.press('PageUp')
+
+        ## Give Kudos on loaded page ##
+        web_feed_entry_locator = self.page.locator(self.web_feed_entry_pattern)
+        self.locate_kudos_buttons_and_maybe_give_kudos(web_feed_entry_locator=web_feed_entry_locator)
+        self.browser.close()
 
 
 def main():
     kg = KudosGiver()
     kg.email_login()
     kg.give_kudos()
+    kg.give_kudos_to_club(14342)
 
 
 if __name__ == "__main__":
