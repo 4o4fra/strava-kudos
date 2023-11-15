@@ -181,7 +181,6 @@ class KudosGiver:
         ## Give Kudos on loaded page ##
         web_feed_entry_locator = self.page.locator(self.web_feed_entry_pattern)
         self.locate_kudos_buttons_and_maybe_give_kudos(web_feed_entry_locator=web_feed_entry_locator)
-        self.browser.close()
         
 
 
@@ -190,6 +189,7 @@ def main():
     kg.email_login()
     kg.give_kudos()
     kg.give_kudos_to_club(14342)
+    kg.browser.close()
 
 
 if __name__ == "__main__":
