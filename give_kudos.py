@@ -189,7 +189,6 @@ def main():
     kg.email_login()
     kg.give_kudos()
     kg.give_kudos_to_club(14342)
-    kg.give_kudos_to_club(127495)
     kg.browser.close()
 
 
