@@ -33,7 +33,7 @@ class KudosGiver:
         Login using email and password
         """
         self.page.goto(os.path.join(BASE_URL, 'login'))
-        self.page.fill('desktop-email', self.EMAIL)
+        self.page.fill('#desktop-email', self.EMAIL)
         self.page.fill("#desktop-current-password", self.PASSWORD)
         self.page.click("button[type='submit']")
         print("---Logged in!!---")
