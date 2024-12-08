@@ -2,10 +2,12 @@ name: Give Strava Kudos
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "30 5-23/6 * * *"
   push:
     branches:
       - main
+  workflow_dispatch:
+
 
 env:
   STRAVA_EMAIL: ${{ secrets.STRAVA_EMAIL }}
