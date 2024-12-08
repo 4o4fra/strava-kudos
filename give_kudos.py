@@ -198,8 +198,6 @@ def main():
     kg = KudosGiver()
     kg.email_login()
     kg.give_kudos()
-    kg.give_kudos_to_club(14342)
-    kg.browser.close()
 
 
 if __name__ == "__main__":
